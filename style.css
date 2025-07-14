@@ -37,10 +37,10 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid #222;
+    background-color: #f5f5f7;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -66,7 +66,7 @@ body {
 
 /* Logo */
 .logo img {
-    height: 40px; /* Adjusted height for header */
+    height: 35px;
 }
 
 /* Navigation Links */
@@ -132,10 +132,10 @@ body {
 
 /* Hero Section */
 #hero {
-    padding: 60px 0;
+    padding: 120px 20px 80px 20px;
     background-color: #f5f5f7;
-    border-radius: 15px;
-    margin-top: 40px;
+    border-radius: 0;
+    margin-top: 0;
 }
 
 .hero-container {
@@ -144,6 +144,8 @@ body {
     justify-content: space-between;
     gap: 40px;
     padding: 0 50px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .hero-content {
@@ -190,7 +192,7 @@ body {
 /* About Section */
 #about {
     padding: 80px 0;
-    background-color: #111;
+    background-color: transparent;
     border-radius: 0; /* Removing radius to have full-width feel */
     margin-top: 60px;
 }
@@ -301,8 +303,14 @@ body {
 #cta {
     padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(45deg, #1e1e1e, #111111);
+    background: transparent;
     margin-top: 60px;
+    border-radius: 15px;
+    border: 1px solid #2a2a2a;
+}
+
+.cta-container {
+    /* This container can be used if a background is needed inside */
 }
 
 .cta-container h2 {
@@ -336,10 +344,11 @@ body {
 
 /* Footer Styles */
 .footer {
-    background-color: #111;
+    background-color: transparent;
     text-align: center;
     padding: 60px 20px;
-    margin-top: 0; /* Adjusted since CTA is now the last visual element before footer */
+    margin-top: 60px;
+    border-top: 1px solid #2a2a2a;
 }
 
 .footer h2 {
@@ -397,6 +406,7 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 0 20px;
+        gap: 60px;
     }
 
     .about-container {
