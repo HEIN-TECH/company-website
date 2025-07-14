@@ -5,12 +5,31 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding-top: 80px; /* Space for the fixed header */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content section {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
 
 /* Header Styles */
 .header {
     background-color: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid #222;
     position: fixed;
     top: 0;
@@ -29,10 +48,15 @@ body {
     height: 80px;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 /* Logo */
-.logo {
-    font-weight: bold;
-    font-size: 1.5em;
+.logo img {
+    height: 40px; /* Adjusted height for header */
 }
 
 /* Navigation Links */
@@ -65,51 +89,205 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #e0e0e0;
+}
+
+
 /* Hero Section */
 #hero {
     text-align: center;
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 #hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
 }
 
 #hero p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #a0a0a0;
 }
 
+/* About Section */
+#about {
+    padding: 60px 0;
+    background-color: #111;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 0 40px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+.about-image {
+    flex-shrink: 0;
+}
+
+.about-image img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+
 /* Services Section */
 #services {
+    padding: 60px 0;
+}
+
+.service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    padding: 40px 0;
+}
+
+.service-card {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-.service-item h2 {
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.service-icon {
+    margin-bottom: 25px;
+}
+
+.service-icon img {
+    height: 64px;
+    width: 64px;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.service-card p {
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+/* Approach Section */
+#approach {
+    padding: 60px 0;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.approach-item {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.approach-item h3 {
     font-size: 1.5em;
     color: #ffffff;
 }
 
-.service-item p {
+.approach-item p {
     color: #a0a0a0;
 }
+
+/* CTA Section */
+#cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(45deg, #1e1e1e, #111111);
+    margin-top: 60px;
+}
+
+.cta-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.cta-container p {
+    font-size: 1.2em;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-cta {
+    padding: 15px 35px;
+    font-size: 1.1em;
+    background-color: #e0e0e0;
+    color: #0a0a0a;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
 
 /* Footer Styles */
 .footer {
     background-color: #111;
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
+    padding: 60px 20px;
+    margin-top: 0; /* Adjusted since CTA is now the last visual element before footer */
 }
 
 .footer h2 {
@@ -141,20 +319,30 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
+        flex-direction: row; /* Keep logo and hamburger on same line */
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 80px; /* Reset height */
+    }
+
+    .header-right {
+        gap: 15px;
     }
 
     .navigation {
-        margin: 20px 0;
+        display: none; /* Hide for mobile, assuming a hamburger menu would be added later */
     }
     
     body {
-        padding-top: 180px; /* Adjust for taller header */
+        padding-top: 80px; /* Reset for fixed header */
     }
 
     #hero h1 {
-        font-size: 2.2em;
+        font-size: 2.5em;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
     }
 } 
