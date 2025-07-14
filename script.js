@@ -43,9 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save language to local storage
         localStorage.setItem('hystech-lang', lang);
-        
-        // Hide dropdown
-        langOptions.style.display = 'none';
     };
 
     // Handle language selection
