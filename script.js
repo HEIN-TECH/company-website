@@ -48,24 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
         langOptions.style.display = 'none';
     };
 
-    // Toggle dropdown
-    langSelectorBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langOptions.style.display = langOptions.style.display === 'block' ? 'none' : 'block';
-    });
-
     // Handle language selection
     langOptions.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
             e.preventDefault();
             const selectedLang = e.target.getAttribute('data-lang');
             setLanguage(selectedLang);
+            // After selection, force the button to lose focus to avoid weird states
+            langSelectorBtn.blur();
         }
-    });
-
-    // Hide dropdown when clicking outside
-    document.addEventListener('click', () => {
-        langOptions.style.display = 'none';
     });
 
     // --- Initial Language Setup ---
