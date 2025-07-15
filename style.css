@@ -424,19 +424,21 @@ body {
 @media (max-width: 768px) {
     .header {
         height: auto;
-        padding: 15px 0; /* Increased vertical padding */
+        padding: 10px 0;
     }
 
     .header-container {
-        flex-direction: column;
-        gap: 20px; /* Increased gap */
-        padding: 0 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 0 20px;
+        height: 60px;
     }
 
     .header-right {
         gap: 15px;
-        flex-direction: column; /* Stack language and contact vertically */
-        align-items: center; /* Center them */
+        flex-direction: row;
+        align-items: center;
     }
 
     .navigation {
@@ -533,6 +535,12 @@ body {
 
     .job-card .job-title {
         font-size: 1.5em;
+    }
+
+    .contact-button .btn {
+        padding: 6px 15px; /* Adjust padding for mobile */
+        font-size: 0.9em;   /* Adjust font size for mobile */
+        white-space: nowrap;/* Prevent text wrapping */
     }
 } 
 
