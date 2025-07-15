@@ -8,8 +8,8 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Vanta Background */
-#vanta-bg {
+/* Particles Background */
+#particles-bg {
     position: fixed;
     top: 0;
     left: 0;
