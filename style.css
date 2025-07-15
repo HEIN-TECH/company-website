@@ -423,14 +423,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: row; /* Keep logo and hamburger on same line */
-        justify-content: space-between;
-        padding: 0 20px;
-        height: 80px; /* Reset height */
+        padding: 0 15px; /* Adjust padding for mobile */
     }
 
     .header-right {
-        gap: 15px;
+        gap: 10px;
     }
 
     .navigation {
@@ -438,23 +435,89 @@ body {
     }
     
     body {
-        padding-top: 80px; /* Reset for fixed header */
+        padding-top: 70px; /* Adjust for potentially smaller header */
+    }
+
+    .section-title h2 {
+        font-size: 2em;
+    }
+
+    /* Hero Section */
+    #hero {
+        height: auto;
+        padding: 60px 20px;
     }
 
     #hero h1 {
-        font-size: 2.8em;
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1.1em;
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        padding: 0 20px;
-        gap: 60px;
+        padding: 0;
+        gap: 40px;
+    }
+
+    .hero-logo {
+        margin-right: 0;
+    }
+
+    .hero-logo img {
+        max-width: 250px;
+        animation: none; /* Disable floating animation on mobile */
+    }
+
+    /* General Content Sections */
+    .main-content {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    
+    #about, #vision, #services, #approach, #cta {
+        padding: 40px 15px;
+        margin-top: 30px;
+    }
+    
+    #vision .vision-content {
+        padding: 30px 20px;
+        margin-top: 30px;
+    }
+
+    #vision .vision-content p {
+        font-size: 1.3em;
     }
 
     .about-container {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
+    }
+    
+    .about-image img {
+        max-width: 200px;
+    }
+    
+    .service-grid, .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Careers Page */
+    .careers-page .careers-hero h1 {
+        font-size: 2.2em;
+    }
+    
+    .job-card {
+        padding: 25px;
+    }
+
+    .job-card .job-title {
+        font-size: 1.5em;
     }
 } 
 
