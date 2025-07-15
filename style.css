@@ -37,7 +37,7 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, #eef2f9 0%, #d8e2ef 100%);
+    background: #BDE0FE; /* New light blue background */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: none;
@@ -54,7 +54,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 0 0; /* Move logo further left */
     height: 80px;
 }
 
@@ -66,16 +66,22 @@ body {
 
 /* Logo */
 .logo img {
-    height: 35px;
+    height: 53px; /* Increased size */
 }
 
 /* Navigation Links */
+.navigation {
+    margin-left: auto; /* Push navigation to the right */
+    margin-right: 25px; /* Add space to the right, moving it left */
+}
+
 .navigation a {
     color: #1d1d1f;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 30px; /* Increased spacing */
     transition: color 0.3s ease;
-    font-weight: 500;
+    font-weight: 600; /* Bolder */
+    font-size: 1.1em; /* Bigger */
 }
 
 .navigation a:hover {
@@ -133,11 +139,11 @@ body {
 
 /* Hero Section */
 #hero {
-    padding: 0 20px;
-    height: 90vh;
+    padding: 0;
+    height: 70vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #eef2f9 0%, #d8e2ef 100%);
+    background: linear-gradient(to bottom, #BDE0FE, #333333); /* New gradient */
     border-radius: 0;
     margin-top: 0;
 }
@@ -147,37 +153,38 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    padding: 0 50px;
-    max-width: 1100px;
-    margin: 0 auto;
+    padding: 0 8vw 0 18vw;
+    width: 100%;
 }
 
 .hero-content {
     flex-basis: 50%;
+    margin-bottom: 5vh; /* Move text up */
 }
 
 #hero h1 {
     font-size: 3.8em;
     margin-bottom: 20px;
     letter-spacing: -1.5px;
-    color: #1d1d1f;
+    color: #ffffff; /* Changed for contrast */
     line-height: 1.1;
 }
 
 #hero p {
     font-size: 1.4em;
-    color: #555;
+    color: #e0e0e0; /* Changed for contrast */
     max-width: 500px;
 }
 
 .hero-logo {
-    flex-basis: 40%;
+    flex-basis: 80%;
     text-align: center;
+    margin-right: -3vw;
 }
 
 .hero-logo img {
-    max-width: 250px;
-    animation: float 4s ease-in-out infinite;
+    max-width: 2000px;
+    animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -288,6 +295,26 @@ body {
     line-height: 1.6;
 }
 
+/* Vision Section */
+#vision {
+    padding-bottom: 60px; /* Add some space below */
+}
+
+#vision .vision-content {
+    background-color: #111;
+    padding: 50px 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#vision .vision-content p {
+    font-size: 1.6em;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
 /* Approach Section */
 #approach {
     padding: 60px 0;
@@ -322,7 +349,7 @@ body {
     background: transparent;
     margin-top: 60px;
     border-radius: 15px;
-    border: 1px solid #2a2a2a;
+    border: none; /* Removed border */
 }
 
 .cta-container {
@@ -442,21 +469,23 @@ body {
 }
 
 .lang-menu button {
-    background: none;
-    border: 1px solid #444;
-    color: #e0e0e0;
-    padding: 8px 12px;
-    border-radius: 5px;
+    background: transparent;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 0.9em;
-    min-width: 100px;
-    border: 1px solid #d2d2d7;
-    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d1d1f; /* Set icon color */
+}
+
+.lang-menu button svg {
+    height: 28px;
+    width: 28px;
 }
 
 .lang-menu:hover button {
-    border-color: #007aff;
+   /* No hover effect needed for the icon button itself */
 }
 
 .lang-options {
@@ -496,28 +525,76 @@ body {
 }
 
 .lang-options a:hover {
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #4a4a4a;
 }
 
 .lang-options a.active {
     font-weight: bold;
-    color: #ffffff;
-    background-color: #4a4a4a;
+    color: #007aff;
 } 
 
 .contact-button .btn {
-    background-color: #e9ecef;
+    background-color: #BDE0FE; /* Match header background */
+    border: 2px solid #1d1d1f;   /* Thicker border */
     color: #1d1d1f;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border: 1px solid #d2d2d7;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    border-radius: 25px;         /* Rounded corners */
+    font-weight: 600;
+    font-size: 1.1em;
 }
 
 .contact-button .btn:hover {
-    background-color: #d2d2d7;
-    color: #000000;
+    background-color: #1d1d1f;   /* Black background on hover */
+    color: #ffffff;             /* White text on hover */
+    border-color: #1d1d1f;      /* Ensure border color matches */
+} 
+
+/* Careers Page Specific Styles */
+.careers-page .careers-hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.careers-page .careers-hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.careers-page .careers-hero p {
+    font-size: 1.2em;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.job-listings {
+    margin-top: 60px;
+}
+
+.job-card {
+    background-color: #1a1a1a;
+    padding: 40px 30px; /* Increased vertical padding */
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 30px; /* Add spacing between job cards */
+}
+
+.job-card .job-title {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.job-card .job-details p {
+    color: #b0b0b0;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.job-card .job-salary {
+    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 1.1em;
 } 

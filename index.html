@@ -14,26 +14,32 @@
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo.svg" data-key-alt="alt_logo" alt="Hystech Logo">
+                    <img src="assets/logo.svg" alt="Hys-Tech Logo">
                 </a>
             </div>
             <nav class="navigation">
-                <a href="#about" data-key="nav_about">关于我们</a>
-                <a href="careers.html" data-key="nav_careers">岗位</a>
+                <a data-link-key="about_on_index" data-key="nav_about"></a>
+                <a data-link-key="careers" data-key="nav_careers"></a>
             </nav>
             <div class="header-right">
                 <div class="language-selector">
                     <div class="lang-menu">
-                        <button id="lang-selector-btn">简体中文</button>
+                        <button id="lang-selector-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="28px" width="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </button>
                         <div id="lang-options" class="lang-options">
-                            <a href="#" data-lang="zh-CN" class="active">简体中文</a>
-                            <a href="#" data-lang="zh-TW">繁體中文</a>
                             <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="zh-TW">繁體中文</a>
+                            <a href="#" data-lang="zh-CN">简体中文</a>
                         </div>
                     </div>
                 </div>
                 <div class="contact-button">
-                    <a href="#contact" class="btn" data-key="nav_contact">联系我们</a>
+                    <a data-link-key="contact_on_index" class="btn" data-key="nav_contact"></a>
                 </div>
             </div>
         </div>
@@ -42,11 +48,11 @@
     <section id="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 data-key="hero_title">构建未来金融</h1>
-                <p data-key="hero_subtitle">融合尖端科技与深度市场洞察</p>
+                <h1 data-key="hero_title"></h1>
+                <p data-key="hero_subtitle"></p>
             </div>
             <div class="hero-logo">
-                <img src="assets/logo-hero.svg" alt="Hystech Main Logo">
+                <img src="assets/logo-hero.svg" alt="">
             </div>
         </div>
     </section>
@@ -54,57 +60,66 @@
     <main class="main-content">
         <section id="about">
             <div class="section-title">
-                <h2 data-key="about_title">关于 Hystech</h2>
+                <h2 data-key="about_title"></h2>
             </div>
             <div class="about-container">
                 <div class="about-content">
-                    <p data-key="about_desc_1">Hystech 是一家专注于量化交易的领先科技金融公司。我们致力于通过复杂的数学模型、统计算法和尖端的计算机技术，在全球金融市场中发掘价值，为我们的合作伙伴带来稳定且卓越的回报。</p>
-                    <p data-key="about_desc_2">我们的团队由顶尖的交易员、数学家和软件工程师组成，他们在各自的领域拥有深厚的专业知识和丰富的实战经验。我们坚信，技术创新是驱动交易发展的核心动力。</p>
+                    <p data-key="about_desc_1"></p>
+                    <p data-key="about_desc_2"></p>
                 </div>
                 <div class="about-image">
-                    <img src="assets/about-us.svg" alt="About Hystech">
+                    <img src="assets/about-us.svg" alt="">
                 </div>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <h2 data-key="vision_title"></h2>
+        </div>
+        <section id="vision">
+            <div class="vision-content">
+                <p data-key="vision_desc"></p>
             </div>
         </section>
 
         <section id="services">
             <div class="section-title">
-                <h2 data-key="services_title">核心业务</h2>
+                <h2 data-key="services_title"></h2>
             </div>
             <div class="service-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="assets/a-share.svg" alt="A-Share Quant Trading">
+                        <img src="assets/a-share.svg" alt="">
                     </div>
-                    <h3 data-key="services_ashare_title">A股量化交易</h3>
-                    <p data-key="services_ashare_desc">我们运用先进的因子挖掘技术和机器学习模型，深度分析A股市场海量数据，构建了涵盖市场中性、指数增强及T+0等多元化的策略组合，旨在适应不同市场环境，实现稳健的超额收益。</p>
+                    <h3 data-key="services_ashare_title"></h3>
+                    <p data-key="services_ashare_desc"></p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="assets/crypto.svg" alt="Crypto Quant Trading">
+                        <img src="assets/crypto.svg" alt="">
                     </div>
-                    <h3 data-key="services_crypto_title">数字货币量化</h3>
-                    <p data-key="services_crypto_desc">在7x24小时不间断的数字货币市场，我们通过高频交易、跨市场套利、DeFi质押策略及期现对冲等方式捕捉机会。我们强大的基础设施和精密的算法确保了在复杂的链上环境中依然能够高效执行。</p>
+                    <h3 data-key="services_crypto_title"></h3>
+                    <p data-key="services_crypto_desc"></p>
                 </div>
             </div>
         </section>
 
         <section id="approach">
             <div class="section-title">
-                <h2 data-key="approach_title">我们的方法</h2>
+                <h2 data-key="approach_title"></h2>
             </div>
             <div class="approach-grid">
                 <div class="approach-item">
-                    <h3 data-key="approach_strategy_title">策略</h3>
-                    <p data-key="approach_strategy_desc">数据驱动的量化策略，捕捉市场中的每一个机会。</p>
+                    <h3 data-key="approach_strategy_title"></h3>
+                    <p data-key="approach_strategy_desc"></p>
                 </div>
                 <div class="approach-item">
-                    <h3 data-key="approach_performance_title">表现</h3>
-                    <p data-key="approach_performance_desc">卓越的历史表现，证明我们的实力与承诺。</p>
+                    <h3 data-key="approach_performance_title"></h3>
+                    <p data-key="approach_performance_desc"></p>
                 </div>
                 <div class="approach-item">
-                    <h3 data-key="approach_risk_title">风险</h3>
-                    <p data-key="approach_risk_desc">严格的风险控制体系，保障资产的安全与稳健。</p>
+                    <h3 data-key="approach_risk_title"></h3>
+                    <p data-key="approach_risk_desc"></p>
                 </div>
             </div>
         </section>
@@ -112,22 +127,23 @@
 
     <section id="cta">
         <div class="cta-container">
-            <h2 data-key="cta_title">开启您的量化投资之旅</h2>
-            <p data-key="cta_desc">无论您是机构投资者还是高净值客户，我们都能量身定制最适合您的解决方案。</p>
-            <a href="#contact" class="btn btn-cta" data-key="cta_button">立即咨询</a>
+            <h2 data-key="cta_title"></h2>
+            <p data-key="cta_desc"></p>
+            <a data-link-key="contact_on_index" class="btn btn-cta" data-key="cta_button"></a>
         </div>
     </section>
 
     <footer id="contact" class="footer">
-        <h2 data-key="footer_contact_us_title">联系我们</h2>
+        <h2 data-key="footer_contact_us_title"></h2>
         <div class="contact-info">
-            <p><strong data-key="footer_telegram">Telegram:</strong> <a href="https://t.me/your_telegram_username" target="_blank">@your_telegram_username</a></p>
-            <p><strong data-key="footer_email">Email:</strong> <a href="mailto:contact@yourcompany.com">contact@yourcompany.com</a></p>
-            <p><strong data-key="footer_phone">Phone:</strong> +86 123 4567 8900</p>
+            <p><strong data-key="footer_telegram"></strong> <a data-link-key="telegram" target="_blank" data-key="footer_telegram_user"></a></p>
+            <p><strong data-key="footer_email"></strong> <a data-link-key="email" data-key="footer_email_address"></a></p>
+            <p><strong data-key="footer_phone"></strong> <a data-link-key="phone" data-key="footer_phone_number"></a></p>
         </div>
-        <p class="copyright" data-key="footer_copyright">&copy; 2024 Hystech. 版权所有.</p>
+        <p class="copyright" data-key="footer_copyright"></p>
     </footer>
 
+    <script src="config.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>

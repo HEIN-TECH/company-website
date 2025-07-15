@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Link Applicator Logic ---
+    const applyLinks = () => {
+        document.querySelectorAll('[data-link-key]').forEach(elem => {
+            const key = elem.getAttribute('data-link-key');
+            if (config.links[key]) {
+                elem.setAttribute('href', config.links[key]);
+            }
+        });
+    };
+
     // --- Language Switcher Logic ---
     const langSelectorBtn = document.getElementById('lang-selector-btn');
     const langOptions = document.getElementById('lang-options');
@@ -33,10 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = lang;
         document.title = translations[lang].company_title;
 
-        // Update dropdown button text
-        const activeLangText = langOptions.querySelector(`[data-lang="${lang}"]`).textContent;
-        langSelectorBtn.textContent = activeLangText;
-        
         // Update active class in dropdown
         langOptions.querySelectorAll('a').forEach(a => a.classList.remove('active'));
         langOptions.querySelector(`[data-lang="${lang}"]`).classList.add('active');
@@ -56,23 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Initial Language Setup ---
-    const savedLang = localStorage.getItem('hystech-lang');
-    const browserLang = navigator.language.slice(0, 2); // Get 'en' from 'en-US'
-    let initialLang = 'zh-CN'; // Default language
+    // --- Initial Page Setup ---
+    const setupPage = () => {
+        // 1. Apply all links from config
+        applyLinks();
 
-    if (savedLang) {
-        initialLang = savedLang;
-    } else if (translations[navigator.language]) { // e.g. 'zh-CN'
-        initialLang = navigator.language;
-    } else if (translations[browserLang]) { // e.g. 'en'
-        initialLang = browserLang;
-    }
-    
-    setLanguage(initialLang);
+        // 2. Set language
+        const savedLang = localStorage.getItem('hystech-lang');
+        const browserLang = navigator.language.slice(0, 2); // Get 'en' from 'en-US'
+        let initialLang = 'zh-CN'; // Default language
 
+        if (savedLang) {
+            initialLang = savedLang;
+        } else if (translations[navigator.language]) { // e.g. 'zh-CN'
+            initialLang = navigator.language;
+        } else if (translations[browserLang]) { // e.g. 'en'
+            initialLang = browserLang;
+        }
+        
+        setLanguage(initialLang);
+    };
+
+    setupPage();
 
     // --- Smooth scroll for anchor links ---
+    // This part is now more important as some links are dynamically set
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
