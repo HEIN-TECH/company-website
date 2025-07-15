@@ -424,17 +424,19 @@ body {
 @media (max-width: 768px) {
     .header {
         height: auto;
-        padding: 10px 0;
+        padding: 15px 0; /* Increased vertical padding */
     }
 
     .header-container {
         flex-direction: column;
-        gap: 15px;
-        padding: 0 15px; /* Adjust padding for mobile */
+        gap: 20px; /* Increased gap */
+        padding: 0 15px;
     }
 
     .header-right {
-        gap: 10px;
+        gap: 15px;
+        flex-direction: column; /* Stack language and contact vertically */
+        align-items: center; /* Center them */
     }
 
     .navigation {
