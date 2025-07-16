@@ -381,43 +381,59 @@ body {
 
 .btn-cta:hover {
     background-color: #ffffff;
-    transform: scale(1.05);
+    transform: translateY(-3px);
 }
 
 
 /* Footer Styles */
 .footer {
-    background-color: transparent;
-    text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
+    background-color: #cccccc;
     margin-top: 60px;
-    border-top: 1px solid #2a2a2a;
 }
 
-.footer h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* 左、中、右三列布局 */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    gap: 20px;
+}
+
+.footer-logo {
+    justify-self: start;
+}
+
+.footer-logo img {
+    height: 50px;
+    opacity: 1; /* 在浅色背景上不需要透明度 */
+}
+
+.contact-info {
+    grid-column: 2; /* 联系方式在中间列 */
+    text-align: left;
 }
 
 .contact-info p {
     margin: 10px 0;
-    font-size: 1.1em;
+    color: #333333; /* 深色文字以确保可读性 */
 }
 
 .contact-info a {
-    color: #a0a0a0;
+    color: #000000; /* 链接文字改为黑色 */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: #ffffff;
+    color: #555555; /* 鼠标悬停时变为深灰色 */
 }
 
 .copyright {
-    margin-top: 30px;
-    color: #555;
+    color: #6c6c6c; /* 版权信息颜色调整 */
     font-size: 0.9em;
+    text-align: center; /* 版权信息居中 */
 }
 
 /* Responsive Design */
