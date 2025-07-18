@@ -102,4 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Hero Entrance Animation ---
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+        // 确保动画在渲染后再触发
+        setTimeout(() => {
+            heroSection.classList.add('hero-entrance');
+        }, 100);
+    }
 }); 
