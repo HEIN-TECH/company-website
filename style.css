@@ -139,6 +139,7 @@ body {
 
 /* Hero Section */
 #hero {
+    position: relative;
     padding: 0;
     height: 70vh;
     display: flex;

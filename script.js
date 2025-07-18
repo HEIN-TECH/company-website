@@ -111,4 +111,51 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSection.classList.add('hero-entrance');
         }, 100);
     }
+
+    // --- Hero Ripple/Water Effect ---
+    const rippleCanvas = document.getElementById('hero-ripple-canvas');
+    if (rippleCanvas && heroSection) {
+        const ctx = rippleCanvas.getContext('2d');
+        let ripples = [];
+        let dpr = window.devicePixelRatio || 1;
+
+        function resizeCanvas() {
+            const rect = heroSection.getBoundingClientRect();
+            rippleCanvas.width = rect.width * dpr;
+            rippleCanvas.height = rect.height * dpr;
+            rippleCanvas.style.width = rect.width + 'px';
+            rippleCanvas.style.height = rect.height + 'px';
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawRipples() {
+            ctx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+            ripples = ripples.filter(r => r.alpha > 0.01);
+            for (const ripple of ripples) {
+                ctx.save();
+                ctx.globalAlpha = ripple.alpha;
+                const grad = ctx.createRadialGradient(ripple.x, ripple.y, ripple.radius * 0.2, ripple.x, ripple.y, ripple.radius);
+                grad.addColorStop(0, 'rgba(255,255,255,0.25)');
+                grad.addColorStop(0.7, 'rgba(0,85,164,0.12)');
+                grad.addColorStop(1, 'rgba(0,85,164,0)');
+                ctx.beginPath();
+                ctx.arc(ripple.x, ripple.y, ripple.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = grad;
+                ctx.fill();
+                ctx.restore();
+                ripple.radius += 2.5 * dpr;
+                ripple.alpha *= 0.93;
+            }
+            requestAnimationFrame(drawRipples);
+        }
+        drawRipples();
+
+        heroSection.addEventListener('mousemove', e => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = (e.clientX - rect.left) * dpr;
+            const y = (e.clientY - rect.top) * dpr;
+            ripples.push({ x, y, radius: 0, alpha: 0.45 });
+        });
+    }
 }); 
