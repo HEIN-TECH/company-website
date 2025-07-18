@@ -143,7 +143,7 @@ body {
     height: 70vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom, #BDE0FE, #333333); /* New gradient */
+    background: linear-gradient(to bottom, #BDE0FE 0%, #342D7E 100%); /* 宝石蓝渐变 */
     border-radius: 0;
     margin-top: 0;
 }
