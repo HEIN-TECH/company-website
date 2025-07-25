@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Set language
         const savedLang = localStorage.getItem('hystech-lang');
         const browserLang = navigator.language.slice(0, 2); // Get 'en' from 'en-US'
-        let initialLang = 'zh-CN'; // Default language
+        let initialLang = 'en'; // Default language
 
         if (savedLang) {
             initialLang = savedLang;
