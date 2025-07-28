@@ -69,15 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Set language
         const savedLang = localStorage.getItem('hystech-lang');
-        const browserLang = navigator.language.slice(0, 2); // Get 'en' from 'en-US'
-        let initialLang = 'en'; // Default language
+        // Always default to English on first visit, ignoring browser language.
+        // User's subsequent selections will be saved in localStorage and respected.
+        let initialLang = 'en';
 
         if (savedLang) {
             initialLang = savedLang;
-        } else if (translations[navigator.language]) { // e.g. 'zh-CN'
-            initialLang = navigator.language;
-        } else if (translations[browserLang]) { // e.g. 'en'
-            initialLang = browserLang;
         }
         
         setLanguage(initialLang);
